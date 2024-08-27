@@ -23,7 +23,7 @@ rpm-build: prepare
 	        --define "RELEASE_NUMBER $(RELEASE)"
 	mv rpmbuild/RPMS/$(ARCH)/$(NAME)-$(VERSION)-$(RELEASE).$(ARCH).rpm $(DIST_DIR)
 
-publish:
+publish: .SILENT
 	curl --user "${CI_USERNAME}:${CI_PASSWORD}" \
 		--upload-file ./dist/${NAME}-${VERSION}-${RELEASE}.x86_64.rpm \
 		${NEXUS_HOST_URL}/repository/edp-yum-snapshots/x86_64/os/Packages/
