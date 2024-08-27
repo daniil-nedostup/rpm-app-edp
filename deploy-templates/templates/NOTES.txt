@@ -1,0 +1,1 @@
+1. Application rpm-java-app-edp has been successfully deployed!!
